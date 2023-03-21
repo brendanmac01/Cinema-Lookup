@@ -31,6 +31,18 @@ function render() {
     const posterPath = mediaData.poster_path;
     const imgUrl = `https://image.tmdb.org/t/p/w500/${posterPath}`;
 
+    $("body").css({
+        "background-image": `url(${imgUrl})`,
+        // "background-repeat": "no-repeat",
+        "background-size": "100% auto",
+        "background-position-x": "center",
+        "background-position-y": "-50px"
+    });
+}
+
+
+
+
 //    $("body").addClass("movie-bg").css("background-image", `url(${imgUrl})`);
    
 
@@ -45,19 +57,6 @@ function render() {
     // $multiMedia.append($img);
     // const backgroundPath = mediaData.background_path;
     // const imgUrl2 = `https://image.tmdb.org/t/p/w500/${backgroundPath}`;
-
-    $("body").css({
-        "background-image": `url(${imgUrl})`,
-        // "background-repeat": "no-repeat",
-        "background-size": "100% auto",
-        "background-position-x": "center",
-        "background-position-y": "-50px"
-    });
-}
-
-
-
-
 
 
 

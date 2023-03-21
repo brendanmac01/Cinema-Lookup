@@ -1,9 +1,3 @@
-/* .movie-bg {
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center -40px;
-  }
-   */
 #releaseDate, #genres, #plot {
     color: red;
     font-weight: lighter;
@@ -38,3 +32,9 @@ form {
     padding: 10px;
   }
   
+  /* .movie-bg {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center -40px;
+  }
+   */
