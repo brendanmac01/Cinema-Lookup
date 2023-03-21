@@ -8,7 +8,8 @@ Technologies Used
 * jQuery Modal
 * Movie DB API  
 
-Screenshots
+Screenshots  
+
 ![Application Image](./image.jpg)  
 
 Getting started
