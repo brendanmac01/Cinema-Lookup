@@ -1,0 +1,40 @@
+/* .movie-bg {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center -40px;
+  }
+   */
+#releaseDate, #genres, #plot {
+    color: red;
+    font-weight: lighter;
+    text-align: center; 
+}
+
+p {
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    color:indianred;
+    font-weight: bolder;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  input[type="text"],
+  input[type="submit"] {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+  }
+  
