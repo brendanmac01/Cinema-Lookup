@@ -13,7 +13,7 @@ function handleGetData(event) {
     event.preventDefault()
     userInput = $input.val()
 $.ajax({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=false`
+    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=true`
 }).then(
     (data) => {
         mediaData = data.results[0];
@@ -40,33 +40,6 @@ function render() {
     });
 }
 
-// $.ajax({
-//     url: `https://api.themoviedb.org/3/search/tv?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=false`
-// }).then(
-//     (data) => {
-//         mediaData = data.results[0];
-//         render();
-//         $("p").css("display", "block");
-//     },
-//     (error) => {
-//      console.log('bad request', error);
-//     }
-//   );
-// }
-// function render() {
-//     $plot.text(mediaData.overview);
-//     $releaseDate.text(mediaData.release_date)
-//     const posterPath = mediaData.poster_path;
-//     const imgUrl = `https://image.tmdb.org/t/p/w500/${posterPath}`;
-
-//     $("body").css({
-//         "background-image": `url(${imgUrl})`,
-//         // "background-repeat": "no-repeat",
-//         "background-size": "100% auto",
-//         "background-position-x": "center",
-//         "background-position-y": "-50px"
-//     });
-// }
 
 
 
