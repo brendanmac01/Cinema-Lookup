@@ -13,7 +13,7 @@ function handleGetData(event) {
     event.preventDefault()
     userInput = $input.val()
 $.ajax({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=true`
+    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=false`
 }).then(
     (data) => {
         mediaData = data.results[0];
