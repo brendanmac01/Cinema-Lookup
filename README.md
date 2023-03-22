@@ -15,6 +15,6 @@ Allow user to enter name of TV-Show or Movie and receieve info about it.
 ![Application Image](./image.jpg)  
 
 **Getting started**  
-[Click Here](https://cinema-lookup-machub0174.vercel.app/) to get started.
+[Click Here](https://cssrtp.com/) to get started.
 
 
