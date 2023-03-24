@@ -1,44 +1,77 @@
-let mediaData, userInput;
+let movieData, tvData, movieInput, tvInput;
 
-const $input = $(`input[type="text"]`)
-const $multiMedia = $(`#multiMedia`)
-const $releaseDate = $(`#releaseDate`)
-const $genres = $(`#genres`)
-const $actors = $(`#actors`)
-const $plot = $(`#plot`)
+const $movieInput = $('#movieInput');
+const $tvInput = $('#tvInput');
+const $releaseDate = $('#releaseDate');
+const $plot = $('#plot');
 
-$(`form`).on(`submit`, handleGetData)
+$('form').on('submit', handleGetMovieData);
 
-function handleGetData(event) {
-    event.preventDefault()
-    userInput = $input.val()
-$.ajax({
-    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + userInput + `&include_adult=false`
-}).then(
+function handleGetMovieData(event) {
+  event.preventDefault();
+  movieInput = $movieInput.val();
+  $.ajax({
+    url: `https://api.themoviedb.org/3/search/movie?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + movieInput + `&include_adult=false`
+  }).then(
     (data) => {
-        mediaData = data.results[0];
-        render();
-        $("p").css("display", "block");
+      movieData = data.results[0];
+      renderMovie();
+      $('p').css('display', 'block');
     },
     (error) => {
-     console.log('bad request', error);
+      console.log('bad request', error);
     }
   );
 }
-function render() {
-    $plot.text(mediaData.overview);
-    $releaseDate.text(mediaData.release_date)
-    const posterPath = mediaData.poster_path;
-    const imgUrl = `https://image.tmdb.org/t/p/w500/${posterPath}`;
 
-    $("body").css({
-        "background-image": `url(${imgUrl})`,
-        // "background-repeat": "no-repeat",
-        "background-size": "100% auto",
-        "background-position-x": "center",
-        "background-position-y": "-50px"
-    });
+function renderMovie() {
+  $plot.text(movieData.overview);
+  $releaseDate.text(movieData.release_date);
+  const posterPath = movieData.poster_path;
+  const imgUrl = `https://image.tmdb.org/t/p/w500/${posterPath}`;
+
+  $('body').css({
+    'background-image': `url(${imgUrl})`,
+    'background-size': '100% auto',
+    'background-position-x': 'center',
+    'background-position-y': '-50px'
+  });
 }
+
+$('#newForm').on('submit', handleGetTVData);
+
+function handleGetTVData(event) {
+  event.preventDefault();
+  tvInput = $tvInput.val();
+  $.ajax({
+    url: `https://api.themoviedb.org/3/search/tv?api_key=79e62173ebd1cd7d36b96a19ae897878&language=en-US&query=` + tvInput + `&include_adult=false`
+  }).then(
+    (data) => {
+      tvData = data.results[0];
+      renderTV();
+      $('p').css('display', 'block');
+    },
+    (error) => {
+      console.log('bad request', error);
+    }
+  );
+}
+
+function renderTV() {
+  $plot.text(tvData.overview);
+  $releaseDate.text(tvData.first_air_date);
+  const posterPath = tvData.poster_path;
+  const imgUrl = `https://image.tmdb.org/t/p/w500/${posterPath}`;
+
+  $('body').css({
+    'background-image': `url(${imgUrl})`,
+    'background-size': '100% auto',
+    'background-position-x': 'center',
+    'background-position-y': '-50px'
+  });
+}
+
+
 
 
 
